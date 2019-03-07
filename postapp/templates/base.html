@@ -1,0 +1,29 @@
+{% load static %}
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
+        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Gothic+A1|Pacifico|Permanent+Marker" rel="stylesheet">
+    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+        <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    
+        <title>방구석 1열</title>
+    </head>
+    <body>
+    
+        <div class="container">
+                <div class="ban"><a href="/"><h1 style="font-family: 'Black Han Sans', sans-serif;float:right">방구석 1열에서 시간 부수기🔨</h1></a></div>
+                <br>
+                {% block content %}
+    
+    
+                {% endblock %} 
+
+        </div>
+        
+    </body>

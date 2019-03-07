@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+{% block content%}
+
+
+        <form method="POST">
+        {% csrf_token%}
+        <table class="mymar">
+            <div class="form-group">
+                        <label for="sel1">SITE</label>
+                        <select class="form-control" name="site" id="id_site">
+                          <option {% if po.site == 'Netfilx' %} selected {% endif%}>Netfilx</option>
+                          <option {% if po.site == 'Watcha' %} selected {% endif%}>Watcha</option>
+                          <option {% if po.site == 'Qoop' %} selected {% endif%}>Qoop</option>
+                          <option {% if po.site == 'Tving' %} selected {% endif%} >Tving</option>
+                          <option {% if po.site == 'Etc' %} selected {% endif%}>Etc</option>
+                        </select>
+            </div>
+
+            <div class="form-group">
+                <label for="con">Country</label>
+                <input type="text" class="form-control" name="contry" value="{{po.contry}}">
+            </div>
+
+            <div class="form-group">
+                <label for="con">Genre</label>
+                <input type="text" class="form-control" name="genre" value="{{po.genre}}">
+            </div>
+
+            <div class="form-group">
+                    <label for="sel1">rate</label>
+                    <select class="form-control" name="rate" id="id_rate">
+                      <option {% if po.rate == '1' %} selected {% endif%}>1</option>
+                      <option {% if po.rate == '2' %} selected {% endif%}>2</option>
+                      <option {% if po.rate == '3' %} selected {% endif%}>3</option>
+                      <option {% if po.rate == '4' %} selected {% endif%} >4</option>
+                      <option {% if po.rate == '5' %} selected {% endif%}>5</option>
+                    </select>
+        </div>
+
+        <div class="form-group">
+                <label for="con">Title</label>
+                <input type="text" class="form-control" name="title" value="{{po.title}}">
+            </div>
+
+                      
+
+            <div class="form-group">
+                    <label for="comment">REVIEW</label>
+                    <textarea class="form-control" rows="5" name="review" id="id_review">{{po.review}}</textarea>
+            </div>
+            
+        </table>
+        <br>
+            <input class="btn btn-dark" type="submit" value="수정" onclick="return confirm('정말 수정하시겠습니까?')">
+        </form>
+{% endblock %}

@@ -1,0 +1,74 @@
+{%extends 'base.html'%}
+{% block content%}
+
+<p style="float:right"><a href="{% url 'new' %}"><span class="glyphicon glyphicon-plus"></span> 새 후기 작성</a></p>
+
+<br>
+<div style="margin-bottom: 10px">
+        <a href="/"><span class="label label-primary">All</span></a>&nbsp;
+            <a href="?site=Netfilx"><span class="label label-danger">Netfilx</span></a> &nbsp;
+            <a href="?site=Watcha"><span class="label label-warning">Watcha</span></a> &nbsp;
+            <a href="?site=Qoop"><span class="label label-info">Qoop</span></a> &nbsp;
+            <a href="?site=Tving"><span class="label label-success">Tving</span></a> &nbsp;
+            <a href="?site=Etc"><span class="label label-default">Etc</span></a> &nbsp;
+
+
+
+</div>
+
+<table class="table table-hover">
+    
+    <tbody>
+        
+        {% for p in posts %}
+          <tr onClick = location.href="{% url 'detail' p.id %}">
+            <td>
+                {% if p.site == 'Netfilx' %}
+                    <span class="label label-danger">
+                {% elif p.site == 'Watcha' %}
+                    <span class="label label-warning">
+                {% elif p.site == 'Qoop' %}
+                    <span class="label label-info">
+                {% elif p.site == 'Tving' %}
+                    <span class="label label-success">
+                {% else %}
+                <span class="label label-default">
+                {% endif %}
+
+                {{p.site}}</span>
+            </td>
+            <td>{{p.genre}}</td>
+            <td>{{p.title}}</td>
+            <td>
+                {{p.rate}}
+            </td>
+          </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+
+  <div style="float:right"><a href="?site={{site}}&rate=true"><span class="glyphicon glyphicon-align-left"></span>평점기준정렬</a></div>
+<Br>
+<div style="float:right">
+
+
+        {% if posts.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{posts.previous_page_number}}">Pre</a>
+      {% endif %}
+              
+      {{posts.number}} of {{posts.paginator.num_pages}}
+
+
+      {% if posts.has_next %}
+        
+        <a href="?page={{posts.next_page_number}}">next</a>
+        <a href="?page={{posts.paginator.num_pages}}">Last</a>
+      {% endif %}
+</div>
+  
+  {% endblock %}
