@@ -5,7 +5,7 @@ from django.db import models
 
 class post(models.Model):
     site = models.CharField(max_length = 20, null = False)
-    contry = models.CharField(max_length = 15)
+    contry = models.CharField(max_length = 50)
     genre = models.CharField(max_length = 20)
     title = models.CharField(max_length = 50)
     rate = models.IntegerField(null = False)
