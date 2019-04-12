@@ -4,32 +4,41 @@ from django.core.paginator import Paginator
 from .models import post
 from django.utils import timezone
 from .forms import post_fo
+from django.db.models import Q
 
 def index(request):
 
     posts_list = post.objects.all()
     site = request.GET.get('site')
+    search_text = request.GET.get('search')
+
+    if search_text != None:
+        posts_list = posts_list.filter(Q(title__contains=search_text) | Q(review__contains=search_text) | Q(contry__contains=search_text))
     
-    if site != None:
+    if site != 'None' and site != None:
         posts_list = posts_list.filter(site=request.GET.get('site'))
+        
 
     if request.GET.get('rate') == 'true':
         posts_list = posts_list.order_by('-rate')
     
     paginator = Paginator(posts_list, 10)
     page = request.GET.get('page')
-    print(page)
     posts = paginator.get_page(page)
 
-    return render(request, 'index.html',{'posts':posts, 'site':site})
+    ratelist = [1,2,3,4,5]
+    sitelist = ['All', 'Netfilx', 'Watcha', 'Tving', 'Qoop', 'Etc']
+
+    return render(request, 'index.html',{'posts':posts, 'site':site, 'sitelist':sitelist, 'ratelist':ratelist})
 
 
 
 def detail(request, post_id):
 
     po = get_object_or_404(post, pk = post_id)
+    ratelist = [1,2,3,4,5]
 
-    return render(request, 'detail.html', {'post':po})
+    return render(request, 'detail.html', {'post':po, 'ratelist':ratelist})
 
 
 def delet(request, post_id):

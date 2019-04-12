@@ -1,21 +1,30 @@
 {%extends 'base.html'%}
 {% block content%}
 
-<p style="float:right"><a href="{% url 'new' %}"><span class="glyphicon glyphicon-plus"></span> 새 후기 작성</a></p>
-
 <br>
-<div style="margin-bottom: 10px">
-        <a href="/"><span class="label label-primary">All</span></a>&nbsp;
-            <a href="?site=Netfilx"><span class="label label-danger">Netfilx</span></a> &nbsp;
-            <a href="?site=Watcha"><span class="label label-warning">Watcha</span></a> &nbsp;
-            <a href="?site=Qoop"><span class="label label-info">Qoop</span></a> &nbsp;
-            <a href="?site=Tving"><span class="label label-success">Tving</span></a> &nbsp;
-            <a href="?site=Etc"><span class="label label-default">Etc</span></a> &nbsp;
+  <div class="category col-md-12 text-center">
+    <h4>
+      {% for i in sitelist%}
+        {% if i == 'All' %}
+          <a href="/" style="color:black">All</a>&nbsp;
+        {% else %}
+          {% if i == site %}
+            <a href="?site={{i}}" style="color:  #BA55D3">
+          {% else %}
+            <a href="?site={{i}}" style="color:black">
+          {% endif %}
+          {{i}}</a> &nbsp;
+        {% endif %}
+      {% endfor %}
+      
+    </h4> 
+    
+      <p><a href="?site={{site}}&rate=true" data-toggle="tooltip" title="평점순으로 정렬하기!"class="sort">* Sort By Rate</a></p>
+  </div>
 
 
 
-</div>
-
+  
 <table class="table table-hover">
     
     <tbody>
@@ -37,10 +46,16 @@
 
                 {{p.site}}</span>
             </td>
-            <td>{{p.genre}}</td>
+            <td>{{p.contry}}</td>
             <td>{{p.title}}</td>
             <td>
-                {{p.rate}}
+                {%for i in ratelist%}
+                {% if forloop.counter > p.rate%}
+                 &nbsp;
+                {% else %}
+                  ⭐
+                {% endif %}
+              {%endfor%}
             </td>
           </tr>
       {% endfor %}
@@ -48,11 +63,7 @@
   </table>
 
 
-
-
-
-  <div style="float:right"><a href="?site={{site}}&rate=true"><span class="glyphicon glyphicon-align-left"></span>평점기준정렬</a></div>
-<Br>
+<br><br>
 <div style="float:right">
 
 

@@ -1,0 +1,128 @@
+body{
+    font-family: 'Gothic A1', sans-serif;
+    
+}
+
+a {
+    text-decoration:none
+}
+
+a:hover{
+    text-decoration:none
+}
+
+/* base.html style */
+
+.ban {
+    font-size: 50px;
+    margin-top: 50px;
+    color: black;
+    font-family: 'Black Han Sans', sans-serif;
+    
+}
+
+.ban:hover{
+    color: #f1f1f1;
+}
+
+.ban-pre {
+    color: #f1f1f1;
+    font-family: 'Black Han Sans', sans-serif;
+    font-style: italic;
+}
+
+#banner {
+    background-color: #fcfcfc;
+}
+
+#banner p{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.bg-color{
+    background-color: RGBA(0, 0, 0, 0.4);
+}
+
+form.example input[type=text] {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 17px;
+    padding:10px;
+    border-radius: 50px;
+    width: 50%;
+    background: #f1f1f1;
+    opacity: 0.5;
+  }
+
+.section-padding {
+    padding: 50px 0px;
+}
+  
+/* end base.html */
+
+
+
+/* index.html*/
+
+.category {
+    font-family: 'Lobster', cursive;
+    margin-bottom:10px
+}
+
+.sort {
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #9699a6;
+}
+
+.menu-restaurant{
+    width: 50%;
+    float: left;
+    padding: 15px;
+    position: relative;
+}
+.menu-restaurant .menu-title {
+    float: left;
+    font-family: Montserrat,arial;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #FFB03B;
+}
+.menu-restaurant .menu-line {
+    position: absolute;
+    bottom: 6px;
+    border-bottom: 1px dotted rgba(0,0,0,.3);
+    margin-left: .6rem;
+    margin-right: .6rem;
+}
+.menu-restaurant .menu-price {
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.menu-restaurant .menu-subtitle {
+    display: block;
+    float: left;
+    color: #B1B1B1;
+    font-family: Satisfy,'Open Sans',arial;
+    font-size: 1.2rem;
+}
+.menu-restaurant span.clearfix {
+    position: relative;
+    display: block;
+}
+
+
+/* end index.html */
+
+
+
+.dtitle{
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.hash{
+    color:#1E90FF;
+    font-style:italic;
+    font-weight: bold;
+}

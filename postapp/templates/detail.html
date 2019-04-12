@@ -4,12 +4,21 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <span class="dtitle">{{post.title}}</span>
-            <div style="float:right"> 평점 : {{post.rate}}</div>
+            <span class="hash">#{{post.contry}}&nbsp;#{{post.genre}}</span>
+            <span class="dtitle">&nbsp;{{post.title}}</span>
+            <div style="float:right"> 
+                    {%for i in ratelist%}
+                    {% if forloop.counter > post.rate%}
+                     
+                    {% else %}
+                      ⭐
+                    {% endif %}
+                  {%endfor%}
+                ({{post.rate}})
+            </div>
         </div>
         <div class="panel-body">
-            [{{post.contry}}]&nbsp;[{{post.genre}}]<br>
-            {{post.review}}
+            <div style="white-space: pre;">{{post.review}}</div>
             <div style="float:right;margin-top:20px">
                 <a href="/{{post.id}}/update">수정</a> 
                 <a href="delet" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>

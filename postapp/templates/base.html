@@ -4,26 +4,52 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 
-        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Gothic+A1|Pacifico|Permanent+Marker" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Gothic+A1|Pacifico|Permanent+Marker|East+Sea+Dokdo|Lobster" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
     
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-        <link rel="stylesheet" href='{% static "css/style.css" %}'>
+        <link rel="stylesheet" href="{% static 'css/my_style.css' %}">
+        
+    
     
         <title>방구석 1열</title>
     </head>
     <body>
-    
-        <div class="container">
-                <div class="ban"><a href="/"><h1 style="font-family: 'Black Han Sans', sans-serif;float:right">방구석 1열에서 시간 부수기🔨</h1></a></div>
-                <br>
-                {% block content %}
-    
-    
-                {% endblock %} 
+            <section id="banner">
+                    <div class="bg-color">
+                      
+                      <div class="container">
+                        <div class="row">
+                                <div class="ban-pre" style="float:right;"><a href="{% url 'new' %}" style="color:white"><span class="glyphicon glyphicon-plus"></span> 새 후기</a></div>
+                          <div class="inner text-center">
+                                <a href="/">
+                                    <h1 class="ban">방구석 1열</h1>
+                                    <h5 class="ban-pre">by rewarding1205</h5>
+                                </a>
+                            
+                                <form class="example" action="/">
+                                    <input type="text" placeholder="Search.." name="search">
+                                </form>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+            </section>
 
-        </div>
+            <section id="menu-list" class="section-padding">
+                    <div class="container">
+                      <div class="row">
+                            {% block content %}
+    
+    
+                            {% endblock %} 
+                
+                      </div>
+                    </div>
+            </section>
+        
         
     </body>
