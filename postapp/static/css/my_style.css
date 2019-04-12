@@ -126,3 +126,14 @@ form.example input[type=text] {
     font-style:italic;
     font-weight: bold;
 }
+
+.new_table{
+    align:center;
+    width:80%;
+}
+
+table {
+    font-family: 'Nanum Gothic', sans-serif;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
