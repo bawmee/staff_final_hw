@@ -128,12 +128,16 @@ form.example input[type=text] {
 }
 
 .new_table{
-    align:center;
+    box-align:center;
     width:80%;
-}
-
-table {
     font-family: 'Nanum Gothic', sans-serif;
     border-collapse: separate;
     border-spacing: 0 10px;
-  }
+    margin-left: auto; 
+    margin-right: auto;
+
+}
+
+.centa {
+    text-align: center;
+}

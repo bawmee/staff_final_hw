@@ -15,6 +15,8 @@
           {% endif %}
           {{i}}</a> &nbsp;
         {% endif %}
+      {% empty %}
+            "검색결과가 없습니다"
       {% endfor %}
       
     </h4> 
@@ -25,7 +27,7 @@
 
 
   
-<table class="table table-hover">
+<table class="table table-hover centa">
     
     <tbody>
         
@@ -47,7 +49,7 @@
                 {{p.site}}</span>
             </td>
             <td>{{p.contry}}</td>
-            <td>{{p.title}}</td>
+            <td><b data-toggle="tooltip" title="{{p.summary}}" >{{p.title}}</b></td>
             <td>
                 {%for i in ratelist%}
                 {% if forloop.counter > p.rate%}
