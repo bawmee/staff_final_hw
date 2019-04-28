@@ -22,7 +22,7 @@ def index(request):
     if request.GET.get('rate') == 'true':
         posts_list = posts_list.order_by('-rate')
     
-    paginator = Paginator(posts_list, 10)
+    paginator = Paginator(posts_list, 15)
     page = request.GET.get('page')
     posts = paginator.get_page(page)
 

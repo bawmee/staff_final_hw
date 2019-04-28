@@ -1,6 +1,5 @@
 body{
-    font-family: 'Gothic A1', sans-serif;
-    
+    font-family: 'Nanum Gothic Coding', sans-serif;
 }
 
 a {
@@ -27,7 +26,7 @@ a:hover{
 
 .ban-pre {
     color: #f1f1f1;
-    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'ZCOOL KuaiLe', 'Black Han Sans', sans-serif;
     font-style: italic;
 }
 
@@ -44,7 +43,7 @@ a:hover{
 }
 
 form.example input[type=text] {
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'ZCOOL KuaiLe','Nanum Gothic', sans-serif;
     font-size: 17px;
     padding:10px;
     border-radius: 50px;
@@ -64,7 +63,7 @@ form.example input[type=text] {
 /* index.html*/
 
 .category {
-    font-family: 'Lobster', cursive;
+    font-family: 'ZCOOL KuaiLe', cursive;
     margin-bottom:10px
 }
 
@@ -112,25 +111,46 @@ form.example input[type=text] {
 }
 
 
+.pag {
+    float:right; 
+    font-family: 'ZCOOL KuaiLe', 'Nanum Gothic', sans-serif;
+    color:silver;
+}
+
+.pag a {
+    color:black;
+}
+
+
+.act {
+    font-weight: bold;
+    color:black;
+    text-decoration: underline;
+}
+
+
+
+
 /* end index.html */
 
 
 
 .dtitle{
-    font-size: 15pt;
+    font-size: 11pt;
     font-weight: bold;
 }
 
 .hash{
     color:#1E90FF;
     font-style:italic;
+    font-size: 8pt;
     font-weight: bold;
 }
 
 .new_table{
     box-align:center;
     width:80%;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic Coding', sans-serif;
     border-collapse: separate;
     border-spacing: 0 10px;
     margin-left: auto; 

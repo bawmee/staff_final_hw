@@ -9,7 +9,7 @@
           <a href="/" style="color:black">All</a>&nbsp;
         {% else %}
           {% if i == site %}
-            <a href="?site={{i}}" style="color:  #BA55D3">
+            <a href="?site={{i}}" style="color:  LimeGreen">
           {% else %}
             <a href="?site={{i}}" style="color:black">
           {% endif %}
@@ -66,22 +66,38 @@
 
 
 <br><br>
-<div style="float:right">
+<div class="pag">
 
+  {% if posts.has_previous %}
+    <a href="?page={{posts.previous_page_number}}" >‹ Prev </a>
+  {% else %}
+    ‹ Prev
+  {% endif %}
 
-        {% if posts.has_previous %}
-        <a href="?page=1">First</a>
-        <a href="?page={{posts.previous_page_number}}">Pre</a>
-      {% endif %}
-              
-      {{posts.number}} of {{posts.paginator.num_pages}}
+  &nbsp;
 
+  {% for p in posts.paginator.page_range %}
+    
+    {% if posts.number == p %}
+      <a href="?page={{p}}" class="act">{{ p }}&nbsp;</a>
+    {% else %}
+      <a href="?page={{p}}">{{ p }}&nbsp;</a>
+    {% endif %}
 
-      {% if posts.has_next %}
-        
-        <a href="?page={{posts.next_page_number}}">next</a>
-        <a href="?page={{posts.paginator.num_pages}}">Last</a>
-      {% endif %}
+  {% endfor %}
+
+  &nbsp;
+      
+  {% if posts.has_next %}
+    <a href="?page={{posts.next_page_number}}">Next ›</a>
+  {% else %}
+    Next ›
+  {% endif %}
 </div>
+
+
+
   
-  {% endblock %}
+
+
+{% endblock %}
