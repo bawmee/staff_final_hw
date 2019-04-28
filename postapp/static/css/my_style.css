@@ -43,8 +43,8 @@ a:hover{
 }
 
 form.example input[type=text] {
-    font-family: 'ZCOOL KuaiLe','Nanum Gothic', sans-serif;
-    font-size: 17px;
+    font-family: 'ZCOOL KuaiLe','Nanum Gothic Coding', sans-serif;
+    font-size: 12px;
     padding:10px;
     border-radius: 50px;
     width: 50%;
@@ -68,7 +68,7 @@ form.example input[type=text] {
 }
 
 .sort {
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic Coding', sans-serif;
     color: #9699a6;
 }
 
@@ -134,6 +134,9 @@ form.example input[type=text] {
 /* end index.html */
 
 
+.table th, .table td{
+    font-size : 10pt;
+}
 
 .dtitle{
     font-size: 11pt;
