@@ -8,7 +8,7 @@ from django.db.models import Q
 
 def index(request):
 
-    posts_list = post.objects.all()
+    posts_list = post.objects.all().order_by('-date')
     site = request.GET.get('site')
     search_text = request.GET.get('search')
 
