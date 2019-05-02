@@ -13,7 +13,7 @@ def index(request):
     search_text = request.GET.get('search')
 
     if search_text != None:
-        posts_list = posts_list.filter(Q(title__contains=search_text) | Q(review__contains=search_text) | Q(contry__contains=search_text))
+        posts_list = posts_list.filter(Q(title__contains=search_text) | Q(contry__contains=search_text))
     
     if site != 'None' and site != None:
         posts_list = posts_list.filter(site=request.GET.get('site'))
@@ -62,9 +62,10 @@ def new(request):
         return render(request, 'new.html', {'form':form})
 
 def update(request, post_id):
+
+    po = get_object_or_404(post, pk = post_id)
     if request.method == 'POST':
         
-            po = get_object_or_404(post, pk = post_id)
             po.site = request.POST.get("site")
             po.contry = request.POST.get("contry")
             po.genre = request.POST.get("genre")
@@ -75,10 +76,7 @@ def update(request, post_id):
             
             po.save()
             return redirect('/'+str(po.id))
-    else:
-        form = post_fo()
-        post_id = post_id
-        po = get_object_or_404(post, pk = post_id)
-        return render(request, 'update.html', {'form':form,'post_id':post_id, 'po':po})
+    else:      
+        return render(request, 'update.html', {'post_id':post_id, 'po':po})
 
 

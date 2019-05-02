@@ -3,8 +3,7 @@ body{
 }
 
 a {
-    text-decoration:none;
-    color: black;
+    text-decoration:none
 }
 
 a:hover{
@@ -12,17 +11,6 @@ a:hover{
 }
 
 /* base.html style */
-
-
-.text-center a {
-    padding : 10px;
-}
-
-.text-center a {
-    margin : 10px;
-    padding : 10px 0px 0px 10px;
-}
-
 
 .ban {
     font-size: 50px;
@@ -40,8 +28,6 @@ a:hover{
     color: #f1f1f1;
     font-family: 'ZCOOL KuaiLe', 'Black Han Sans', sans-serif;
     font-style: italic;
-    margin-top: 10px;
-    margin-right: 10px;
 }
 
 #banner {
@@ -54,10 +40,6 @@ a:hover{
 
 .bg-color{
     background-color: RGBA(0, 0, 0, 0.4);
-}
-
-.wh-var{
-    background-color: white
 }
 
 form.example input[type=text] {
@@ -182,5 +164,3 @@ form.example input[type=text] {
 .centa {
     text-align: center;
 }
-
-

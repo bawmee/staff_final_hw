@@ -1,0 +1,31 @@
+{% extends 'login_base.html' %}
+{% block content %}
+
+
+        
+        {% if error %}
+            
+            <div class="alert alert-success">
+                    <strong>Error!</strong> &nbsp; {{ error }}
+            </div>
+        {% endif %}
+        
+
+        <div class="login-page">
+                <div class="form">
+                        <a href="{% url 'index' %}"><h2>방구석 1열</h2></a>
+                  <form class="login-form" method="POST" action="{% url 'signup' %}">
+                      {% csrf_token %}
+                    <input type="text" placeholder="username" name="username"/>
+                    <input type="password" placeholder="password" name="password"/>
+                    <input type="password" placeholder="con_password" name="con_password"/>
+                    <button>create</button>
+                    <p class="message">Already registered? <a href="{% url 'login' %}">Sign In</a></p>
+                      </form>
+                </div>
+              </div>
+
+
+
+
+{% endblock %}
