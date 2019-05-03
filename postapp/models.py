@@ -8,7 +8,7 @@ class post(models.Model):
     genre = models.CharField(max_length = 20)
     title = models.CharField(max_length = 50)
     rate = models.IntegerField(null = False)
-    review = models.TextField(max_length = 250, null = False, default = "입력없음")
+    review = models.TextField(null = False, default = "입력없음")
     date = models.DateTimeField('date published', default=timezone.now)
     writer = models.CharField(max_length = 20 , default="gyuzizi")
 
