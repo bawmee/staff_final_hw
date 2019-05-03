@@ -24,7 +24,7 @@
     <body>
             <section id="banner">
                     <div class="bg-color">
-                                <div class="ban-pre" style="float:right; color:black">
+                                <div class="ban-pre" style="float:right; color:black; font-size: 12px;">
                                         {% if user.is_authenticated %}
                                                 <a href="{% url 'new' %}">{{ user.username }},</a> &nbsp;&nbsp;
                                                 <a href="{% url 'logout' %}" style="color:white" ><span class="glyphicon glyphicon-log-out"></span> Logout</a>

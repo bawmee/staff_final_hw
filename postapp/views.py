@@ -46,7 +46,7 @@ def delet(request, post_id):
     po = get_object_or_404(post, pk = post_id)
     po.delete()
 
-    return redirect('/')
+    return redirect(index)
 
 
 def new(request):
@@ -56,7 +56,7 @@ def new(request):
             post = form.save(commit = False)
             post.date = timezone.now()
             post.save()
-            return redirect('/'+str(post.id))
+            return redirect(detail, post.id)
     else:
         form = post_fo()
         return render(request, 'new.html', {'form':form})
@@ -75,7 +75,7 @@ def update(request, post_id):
             po.date = timezone.now()
             
             po.save()
-            return redirect('/'+str(po.id))
+            return redirect(detail, po.id)
     else:      
         return render(request, 'update.html', {'post_id':post_id, 'po':po})
 
