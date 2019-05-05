@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+
 from django.core.paginator import Paginator
 from .models import post
-from django.utils import timezone
+
+from django.contrib.auth.decorators import login_required
+
 from .forms import post_fo
 from django.db.models import Q
 
@@ -29,7 +32,7 @@ def index(request):
     ratelist = [1,2,3,4,5]
     sitelist = ['All', 'Netfilx', 'Watcha', 'Tving', 'Qoop', 'Etc']
 
-    return render(request, 'index.html',{'posts':posts, 'site':site, 'sitelist':sitelist, 'ratelist':ratelist})
+    return render(request, 'index.html',{'posts':posts, 'site':site, 'sitelist':sitelist, 'ratelist':ratelist, 'search':search_text})
 
 
 
@@ -40,7 +43,7 @@ def detail(request, post_id):
 
     return render(request, 'detail.html', {'post':po, 'ratelist':ratelist})
 
-
+@login_required(login_url = '/login/')
 def delet(request, post_id):
 
     po = get_object_or_404(post, pk = post_id)
@@ -48,7 +51,7 @@ def delet(request, post_id):
 
     return redirect(index)
 
-
+@login_required(login_url = '/login/')
 def new(request):
     if request.method == 'POST':
         form = post_fo(request.POST)
@@ -61,6 +64,7 @@ def new(request):
         form = post_fo()
         return render(request, 'new.html', {'form':form})
 
+@login_required(login_url = '/login/')
 def update(request, post_id):
 
     po = get_object_or_404(post, pk = post_id)

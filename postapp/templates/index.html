@@ -14,9 +14,9 @@
           {% endif %}
           {{i}}</a> &nbsp;
         {% endif %}
-      {% empty %}
-            "검색결과가 없습니다"
       {% endfor %}
+
+      
       
     </h4> 
     
@@ -59,10 +59,12 @@
               {%endfor%}
             </td>
           </tr>
+          {% empty %}
+            <tr><td><b>{{search}}</b>에 대한 검색결과가 없습니다</td></tr>
       {% endfor %}
     </tbody>
   </table>
-
+  
 
 <br><br>
 <div class="pag">

@@ -20,7 +20,7 @@
         <div class="panel-body" style="font-size:10pt">
             <div>{{post.review|linebreaksbr}}</div>
             <div style="float:right;margin-top:20px;font-family:Gothic A1">
-                {{post.date|date:"Y.m.d"}} &nbsp; By. {{post.writer}}
+                {{post.date|date:"Y.m.d"}} &nbsp; <b>By. {{post.writer}}</b> 
 
                 {% if post.writer == user.username %}
                 <a href="/{{post.id}}/update">수정</a> 
